@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src fonts.gstatic.com cdnjs.cloudflare.com; connect-src 'self'">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="theme-color" content="#0f0f1e">
+    <title>Hugging AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVcXpRCaG190F3R61z+8B4AmZqQS5IvUrhJpFtutes+G9/fc1yYowXYpRDEpVvFezMA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css" integrity="sha512-Fcqyubi5qOvl+yCwSV+rLUQkJwkoC1SKNF2Eri7ZLcfvLvKRfMO3JK8+NgeXHj6BSt5a6L5Pcaab8c7b/RCSw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>🤗 Hugging AI</h2>
+            <p>Powered by Hugging Face & Mistral</p>
+        </div>
+        <div class="chat-box" id="chat-box" role="log" aria-live="polite" aria-label="Chat messages">
+            <!-- Chat messages will be appended here -->
+        </div>
+        <div class="chat-input">
+            <input 
+                type="text" 
+                id="message-input" 
+                placeholder="Type your message..." 
+                aria-label="Message input"
+                autocomplete="off"
+                spellcheck="true">
+            <button id="send-btn" type="button" aria-label="Send message">
+                <i class="fas fa-paper-plane" aria-hidden="true"></i>
+            </button>
+        </div>
+        <div class="chat-footer">
+            <p>Hugging AI - Powered by Open Source Models</p>
+        </div>
+    </div>
+
+    <!-- External scripts with integrity checks -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyraQCSstlAWRQ2BuatIjYXHS8bQWLaX/U+DAWnwOrQyw994BMbCK2sFlLc6Gm7IvH40BxWsmtzA2QafIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</body>
+</html>
